@@ -1,0 +1,12 @@
+{
+  "name": "@acme/jest-preset",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "ts-jest": "^29.0.3"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "*"
+  }
+}

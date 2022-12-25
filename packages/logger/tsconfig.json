@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2015"
+    ],
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "extends": "@acme/tsconfig/base.json",
+  "include": [
+    "src"
+  ]
+}

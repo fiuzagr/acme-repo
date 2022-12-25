@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true
+  },
+  "extends": "@acme/tsconfig/client/react/vite.json",
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../../packages/ui"
+    }
+  ]
+}

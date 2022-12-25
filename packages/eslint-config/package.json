@@ -1,0 +1,23 @@
+{
+  "name": "@acme/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "client/**/*",
+    "server/**/*",
+    "index.js"
+  ],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-turbo": "^0.0.7",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sonarjs": "^0.17.0"
+  }
+}

@@ -1,0 +1,5 @@
+## NOTICE
+# This file is used to ensure editors don't see files that shouldn't be applied
+# to the lint. Because of this, packages that need this lint must have your own
+# ignore file configured.
+*

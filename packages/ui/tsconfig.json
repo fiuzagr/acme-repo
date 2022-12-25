@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "extends": "@acme/tsconfig/client/react/library.json",
+  "include": [
+    "src"
+  ]
+}
