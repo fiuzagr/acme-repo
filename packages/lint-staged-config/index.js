@@ -6,5 +6,5 @@
 //
 // This file is used as base config.
 module.exports = {
-  'src/**/*.{js,jsx,ts,tsx}': 'eslint --fix'
-}
+  'src/**/*.{js,jsx,ts,tsx}': 'eslint --fix',
+};

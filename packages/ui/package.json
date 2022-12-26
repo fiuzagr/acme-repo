@@ -30,6 +30,7 @@
   "devDependencies": {
     "@acme/eslint-config": "*",
     "@acme/jest-preset": "*",
+    "@acme/lint-staged-config": "*",
     "@acme/stylelint-config": "*",
     "@acme/tsconfig": "*",
     "@types/jest": "^29.2.4",

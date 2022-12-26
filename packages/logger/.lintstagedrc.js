@@ -1,3 +1,1 @@
-module.exports = {
-  ...require('../../.lintstagedrc.js'),
-};
+module.exports = require('@acme/lint-staged-config');

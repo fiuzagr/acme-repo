@@ -16,6 +16,9 @@ A monorepo starter kit for Typescript code.
 
 ## Configuring a new package
 
+Any package is completely isolated. To integrate a package with this repository,
+follow the steps below:
+
 ### package.json
 
 Make sure the package has the `package.json` file configured correctly.
@@ -30,13 +33,14 @@ Insert the `devDependencies` and configure the `jest`:
   "devDependencies": {
     "@acme/eslint-config": "*",
     "@acme/jest-preset": "*",
+    "@acme/lint-staged-config": "*",
     "@acme/stylelint-config": "*",
     "@acme/tsconfig": "*"
   }
 }
 ```
 
-Configure the common `scripts`:
+Configure the common `scripts` to run with Turborepo:
 
 ```json
 {
@@ -113,9 +117,13 @@ in [./services/api-service/tsconfig.json](./services/api-service/tsconfig.json)_
 
 ### .lintstagedrc.js
 
-Make sure the package has the `.lintstagedrc.json` file configured correctly.
+Make sure the package configures this file extending the
+`@acme/lint-staged-config`.
 
-_See an example
+_See an example without stylelint
+in [./packages/logger/.lintstagedrc.js](./packages/logger/.lintstagedrc.js)_
+
+_See an example with stylelint
 in [./packages/ui/.lintstagedrc.js](./packages/ui/.lintstagedrc.js)_
 
 ### .eslintrc.js
@@ -137,3 +145,9 @@ The `.stylelintrc.js` file must be marked with the `root` property.
 _See an example
 in [./packages/ui/.stylelintrc.js](./packages/ui/.stylelintrc.js)_
 
+### .stylelintignore
+
+If needed, make sure the package has this file configured correctly.
+
+_See an example
+in [./packages/ui/.stylelintignore](./packages/ui/.stylelintignore)_

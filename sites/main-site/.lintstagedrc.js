@@ -1,4 +1,1 @@
-module.exports = {
-  ...require('../../.lintstagedrc.js'),
-  'src/**/*.{html,css,js,jsx,ts,tsx}': 'stylelint',
-};
+module.exports = require('@acme/lint-staged-config/with-stylelint');

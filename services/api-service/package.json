@@ -25,6 +25,7 @@
   "devDependencies": {
     "@acme/eslint-config": "*",
     "@acme/jest-preset": "*",
+    "@acme/lint-staged-config": "*",
     "@acme/tsconfig": "*",
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.13",

@@ -1,0 +1,10 @@
+{
+  "name": "@acme/lint-staged-config",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "@acme/eslint-config": "*"
+  }
+}
