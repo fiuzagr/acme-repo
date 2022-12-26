@@ -14,6 +14,12 @@ A monorepo starter kit for Typescript code.
 - [Prettier](https://prettier.io) for code formatting
 - [Jest](https://jestjs.io) a test framework
 
+## Creating a new package
+
+```shell
+npm init --yes --scope='@acme' --workspace='sites/<site-dirname>'
+```
+
 ## Configuring a new package
 
 Any package is completely isolated. To integrate a package with this repository,
@@ -23,19 +29,20 @@ follow the steps below:
 
 Make sure the package has the `package.json` file configured correctly.
 
-Insert the `devDependencies` and configure the `jest`:
+Given the
+[specifities of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together)
+all packages inside workspaces can be used as `devDependencies` without
+any configuration. To packages that must be included in the bundle, we
+recommended that you install these packages in the main bundle package. _See an
+example that uses `@acme/logger` as dependency in
+[./services/api-service/package.json](./services/api-service/package.json)_
+
+Configure the `jest` to preset `@acme/jest-preset/<some-preset-file>`:
 
 ```json
 {
   "jest": {
     "preset": "@acme/jest-preset/node"
-  },
-  "devDependencies": {
-    "@acme/eslint-config": "*",
-    "@acme/jest-preset": "*",
-    "@acme/lint-staged-config": "*",
-    "@acme/stylelint-config": "*",
-    "@acme/tsconfig": "*"
   }
 }
 ```
@@ -57,13 +64,13 @@ Configure the common `scripts` to run with Turborepo:
 ```
 
 > :warning: Watch out for linters. If `stylelint` is not needed, do not
-> install it.
+> install or configure it.
 
-_See an example without stylelint
-in [./packages/logger/package.json](./packages/logger/package.json)_
+_See an example without stylelint in
+[./packages/logger/package.json](./packages/logger/package.json)_
 
-_See an example with stylelint
-in [./packages/ui/package.json](./packages/ui/package.json)_
+_See an example with stylelint in
+[./packages/ui/package.json](./packages/ui/package.json)_
 
 ### tsconfig.json
 
@@ -89,8 +96,8 @@ In the package to be **imported**, make sure that `compilerOptions.outDir`,
 }
 ```
 
-_See an example
-in [./packages/logger/tsconfig.json](./packages/logger/tsconfig.json)_
+_See an example in
+[./packages/logger/tsconfig.json](./packages/logger/tsconfig.json)_
 
 In the package that will **import** another package, make sure that
 `compilerOptions.composite` and `references` are defined in `tsconfig.json`:
@@ -109,8 +116,8 @@ In the package that will **import** another package, make sure that
 }
 ```
 
-_See an example
-in [./services/api-service/tsconfig.json](./services/api-service/tsconfig.json)_
+_See an example in
+[./services/api-service/tsconfig.json](./services/api-service/tsconfig.json)_
 
 > :warning: For correct type checking a build of **imported** package must be
 > generated.
@@ -120,11 +127,11 @@ in [./services/api-service/tsconfig.json](./services/api-service/tsconfig.json)_
 Make sure the package configures this file extending the
 `@acme/lint-staged-config`.
 
-_See an example without stylelint
-in [./packages/logger/.lintstagedrc.js](./packages/logger/.lintstagedrc.js)_
+_See an example without stylelint in
+[./packages/logger/.lintstagedrc.js](./packages/logger/.lintstagedrc.js)_
 
-_See an example with stylelint
-in [./packages/ui/.lintstagedrc.js](./packages/ui/.lintstagedrc.js)_
+_See an example with stylelint in
+[./packages/ui/.lintstagedrc.js](./packages/ui/.lintstagedrc.js)_
 
 ### .eslintrc.js
 
@@ -132,8 +139,8 @@ Make sure the package configures this file extending the `@acme/eslint-config`.
 
 The `.eslintrc.js` file must be marked with the `root` property.
 
-_See an example
-in [./packages/ui/.eslintrc.js](./packages/ui/.eslintrc.js)_
+_See an example in
+[./packages/ui/.eslintrc.js](./packages/ui/.eslintrc.js)_
 
 ### .stylelintrc.js
 
@@ -142,12 +149,12 @@ If needed, make sure the package configures this file extending the
 
 The `.stylelintrc.js` file must be marked with the `root` property.
 
-_See an example
-in [./packages/ui/.stylelintrc.js](./packages/ui/.stylelintrc.js)_
+_See an example in
+[./packages/ui/.stylelintrc.js](./packages/ui/.stylelintrc.js)_
 
 ### .stylelintignore
 
 If needed, make sure the package has this file configured correctly.
 
-_See an example
-in [./packages/ui/.stylelintignore](./packages/ui/.stylelintignore)_
+_See an example in
+[./packages/ui/.stylelintignore](./packages/ui/.stylelintignore)_
