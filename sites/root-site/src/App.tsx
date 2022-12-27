@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { CounterButton } from '@acme/ui';
+
+const HomeApp = React.lazy(() => import('@acme/home-site/App'));
 
 function App() {
   return (
     <div className="app">
       <header className="app-header">
+        <h1>Root Site</h1>
         <img src={logo} className="app-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to HOT reload.
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <CounterButton />
+
+        <Suspense fallback={'loading...'}>
+          <HomeApp />
+        </Suspense>
       </header>
     </div>
   );

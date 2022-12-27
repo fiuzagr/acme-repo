@@ -6,14 +6,15 @@
     "@acme/ui": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "cross-env PORT=7001 craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "echo 'Eject is disabled'",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "clean": "rimraf .turbo node_modules dist build",
     "dev": "npm start",
     "lint": "npm run lint:code && npm run lint:styles",
     "lint:code": "TIMING=1 eslint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -42,7 +43,6 @@
     "@types/react-dom": "^18.0.10",
     "external-remotes-plugin": "^1.0.0",
     "stylelint": "^14.16.0",
-    "typescript": "^4.9.4",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.9.4"
   }
 }

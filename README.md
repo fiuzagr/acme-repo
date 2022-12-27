@@ -9,10 +9,14 @@ A monorepo starter kit for Typescript code.
 - [Turborepo](https://turbo.build/repo/) a build system with caching and
   monorepo support
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Stylelint](https://stylelint.io/) for code linting
+- [ESLint](https://eslint.org/) + [Stylelint](https://stylelint.io/) for code
+  linting
 - [Prettier](https://prettier.io) for code formatting
 - [Jest](https://jestjs.io) a test framework
+- a sample of the
+  [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
+  implementation over [CRA](https://create-react-app.dev/) with
+  [CRACO](https://craco.js.org/)
 
 ## Creating a new package
 
@@ -206,7 +210,7 @@ npm run dev -- --filter='<site-package-name>...'
 Example:
 
 ```shell
-npm run dev -- --filter='@acme/root-site...'
+npm run dev -- --filter='@acme/home-site...'
 ```
 
 > :warning: Pay attention to run two or more sites with all dependencies when
