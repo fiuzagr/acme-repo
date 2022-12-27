@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "CRA",
+  "extends": "../base.json",
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "noEmit": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@acme/cra-template",
+  "version": "1.0.0",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "typescript",
+    "craco"
+  ],
+  "description": "ACME Typescript template with CRACO.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "devDependencies": {
+    "stylelint": "^14.16.0"
+  }
+}

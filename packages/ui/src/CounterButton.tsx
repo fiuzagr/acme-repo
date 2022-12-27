@@ -28,7 +28,7 @@ export const CounterButton = () => {
       <div>
         <button
           style={{
-            background: 'black',
+            background: 'white',
             color: 'white',
             border: 'none',
             paddingBlock: '0.5rem',

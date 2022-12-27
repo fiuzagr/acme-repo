@@ -23,9 +23,7 @@
       "outputs": []
     },
     "lint:staged": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": [],
       "outputs": []
     },
     "dev": {

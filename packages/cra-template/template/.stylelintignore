@@ -1,0 +1,5 @@
+# ignore all files
+*
+# and includes src files
+!src/
+!src/**/*

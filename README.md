@@ -16,8 +16,38 @@ A monorepo starter kit for Typescript code.
 
 ## Creating a new package
 
+Packages must be one of the types: `sites`, `services` and `packages`.
+
+A site package is a client-side application. Typically, this generates, at
+build or runtime (SSR), at least one HTML and/or static assets entrypoint.
+
+A service package is a server-side application. Typically, exposes an API.
+
+Any other is a general purpose package. Can be a library,
+configuration presets, helpers packages, utils packages, dev packages, etc.
+
+### Package & Service
+
 ```shell
-npm init --yes --scope='@acme' --workspace='sites/<site-dirname>'
+npm init --yes --scope='@acme' --workspace='<packages | services>/<package-dirname>'
+```
+
+- [ ] TODO: make a npm init template
+
+### CRA Site (with [CRACO](https://craco.js.org/))
+
+```shell
+npx create-react-app sites/<site-dirname> --template=@acme/cra-template
+npm pkg set name="@acme/<site-dirname>" --workspace="<site-dirname>"
+```
+
+> :information_source: The new package name will be used in
+> `--workspace=<package-name>` for the next commands.
+
+To define a new application PORT (`localhost:<PORT>`):
+
+```shell
+npm pkg set scripts.start='cross-env PORT=<localhost-port> craco start' --workspace="<package-name>"
 ```
 
 ## Configuring a new package
@@ -158,3 +188,32 @@ If needed, make sure the package has this file configured correctly.
 
 _See an example in
 [./packages/ui/.stylelintignore](./packages/ui/.stylelintignore)_
+
+## Running DEV mode
+
+To run a site in DEV mode without run your dependencies in DEV mode:
+
+```shell
+npm run dev -- --filter='<site-package-name>'
+```
+
+To run a site in DEV mode with all your dependencies in DEV mode too:
+
+```shell
+npm run dev -- --filter='<site-package-name>...'
+```
+
+Example:
+
+```shell
+npm run dev -- --filter='@acme/root-site...'
+```
+
+> :warning: Pay attention to run two or more sites with all dependencies when
+> the dependencies is shared. If you run two or more sites in separated
+> terminal, you will get two or more compilers of the same shared dependencies
+> running at same time.
+
+_To use more filter syntaxes, see
+[Turborepo Filtering Workspaces](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+._

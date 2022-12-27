@@ -1,3 +1,5 @@
+const OFF = 0;
+
 module.exports = {
   extends: [
     'prettier',
@@ -6,14 +8,26 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:sonarjs/recommended',
   ],
+  env: {
+    es6: true,
+  },
   ignorePatterns: ['node_modules', 'dist', 'build', '!.*.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['prettier', 'sonarjs'],
   rules: {
     'prettier/prettier': 'error',
   },
+  overrides: [
+    {
+      // config files can be use CommonJS module
+      files: ['./*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': OFF,
+      },
+    },
+  ],
 };

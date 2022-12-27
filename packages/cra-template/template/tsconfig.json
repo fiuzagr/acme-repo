@@ -1,0 +1,14 @@
+{
+  "extends": "@acme/tsconfig/client/react/cra.json",
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../../packages/ui"
+    }
+  ]
+}
