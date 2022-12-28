@@ -17,6 +17,11 @@ A monorepo starter kit for Typescript code.
   [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
   implementation over [CRA](https://create-react-app.dev/) with
   [CRACO](https://craco.js.org/)
+- [Commitizen](https://commitizen-tools.github.io/commitizen/) +
+  [Commitlint](https://commitlint.js.org)
+  working together with Git Hooks via
+  [Husky](https://typicode.github.io/husky/)
+- [lint-staged](https://github.com/okonet/lint-staged) with Git Hooks via Husky
 
 ## Creating a new package
 
