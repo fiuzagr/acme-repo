@@ -18,14 +18,22 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "prepare": "husky install",
-    "pre-commit": "turbo run lint:staged --continue"
+    "git:pre-commit": "turbo run lint:staged --continue",
+    "git:prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
   },
   "devDependencies": {
+    "commitizen": "^4.2.6",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
     "turbo": "latest"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

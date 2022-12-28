@@ -207,16 +207,17 @@ To run a site in DEV mode with all your dependencies in DEV mode too:
 npm run dev -- --filter='<site-package-name>...'
 ```
 
-Example:
-
-```shell
-npm run dev -- --filter='@acme/home-site...'
-```
-
 > :warning: Pay attention to run two or more sites with all dependencies when
 > the dependencies is shared. If you run two or more sites in separated
 > terminal, you will get two or more compilers of the same shared dependencies
-> running at same time.
+> running at same time. Utilize the `--filter` instead run in multiple
+> terminals.
+
+Example:
+
+```shell
+npm run dev -- --filter='@acme/home-site...' --filter='@acme/root-site...'
+```
 
 _To use more filter syntaxes, see
 [Turborepo Filtering Workspaces](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
