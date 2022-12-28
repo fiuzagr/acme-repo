@@ -6,5 +6,6 @@
 //
 // This file is used as base config.
 module.exports = {
+  'src/**/*.{ts,tsx}': 'tsc --noEmit',
   'src/**/*.{js,jsx,ts,tsx}': 'eslint --fix',
 };

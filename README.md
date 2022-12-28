@@ -115,14 +115,16 @@ to correctly interpret these files, the `compilerOptions.composite` and
 `references` properties must be defined.
 
 In the package to be **imported**, make sure that `compilerOptions.outDir`,
-`compilerOptions.rootDir` and `includes` are defined in `tsconfig.json`:
+`compilerOptions.rootDir`, `compilerOptions.composite` and `includes` are
+defined in `tsconfig.json`:
 
 ```json
 {
   "extends": "@acme/tsconfig/<some-config-file>",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "composite": true
   },
   "includes": [
     "src"
@@ -130,8 +132,20 @@ In the package to be **imported**, make sure that `compilerOptions.outDir`,
 }
 ```
 
-_See an example in
+> :warning: Packages that use [tsup](https://github.com/egoist/tsup) to build
+> do not work according to `composite` option. Remove `composite` in this
+> case and use `@acme/lint-staged-config/with-tsup` to configure
+> `.lintstagedrc.js`. See this
+> [tsup issue](https://github.com/egoist/tsup/issues/647).
+
+_See an example with composite option in
 [./packages/logger/tsconfig.json](./packages/logger/tsconfig.json)_
+
+_See an example without composite option in
+[./packages/ui/tsconfig.json](./packages/ui/tsconfig.json)_
+
+_See an example of the lint-staged configuration in
+[./packages/ui/.lintstagedrc.js](./packages/ui/.lintstagedrc.js)_
 
 In the package that will **import** another package, make sure that
 `compilerOptions.composite` and `references` are defined in `tsconfig.json`:
@@ -154,7 +168,9 @@ _See an example in
 [./services/api-service/tsconfig.json](./services/api-service/tsconfig.json)_
 
 > :warning: For correct type checking a build of **imported** package must be
-> generated.
+> generated, or a declaration type of module should be defined. _See an example
+> of the declaration type in
+> [./services/api-service/src/modules.d.ts](./services/api-service/src/modules.d.ts)_
 
 ### .lintstagedrc.js
 
@@ -164,7 +180,7 @@ Make sure the package configures this file extending the
 _See an example without stylelint in
 [./packages/logger/.lintstagedrc.js](./packages/logger/.lintstagedrc.js)_
 
-_See an example with stylelint in
+_See an example with stylelint (and tsup) in
 [./packages/ui/.lintstagedrc.js](./packages/ui/.lintstagedrc.js)_
 
 ### .eslintrc.js

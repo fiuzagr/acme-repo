@@ -8,23 +8,27 @@
       ],
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "outputMode": "new-only"
     },
     "test": {
       "outputs": [
         "coverage/**"
       ],
-      "dependsOn": []
+      "dependsOn": [],
+      "outputMode": "new-only"
     },
     "lint": {
       "dependsOn": [
         "^build"
       ],
-      "outputs": []
+      "outputs": [],
+      "outputMode": "new-only"
     },
-    "lint:staged": {
+    "//#lint:staged": {
       "dependsOn": [],
-      "outputs": []
+      "outputs": [],
+      "outputMode": "new-only"
     },
     "dev": {
       "cache": false

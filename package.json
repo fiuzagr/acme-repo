@@ -18,8 +18,9 @@
     "lint": "turbo run lint",
     "test": "turbo run test",
     "prepare": "husky install",
-    "git:pre-commit": "turbo run lint:staged --continue",
-    "git:prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    "git:pre-commit": "turbo run build --continue && turbo run lint:staged --continue",
+    "git:prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true",
+    "lint:staged": "lint-staged -q"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",

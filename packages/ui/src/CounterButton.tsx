@@ -6,8 +6,8 @@ export const CounterButton = () => {
   return (
     <div
       style={{
-        background: 'rgba(0 100 0 / 10%)',
-        borderRadius: '8px',
+        background: 'rgb(0 100 0 / 10%)',
+        borderRadius: '6px',
         padding: '1.5rem',
         fontWeight: 500,
       }}

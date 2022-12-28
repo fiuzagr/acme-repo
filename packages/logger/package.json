@@ -14,7 +14,6 @@
     "dev": "tsc -w",
     "lint": "npm run lint:code",
     "lint:code": "TIMING=1 eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:staged": "lint-staged -q",
     "test": "jest"
   },
   "jest": {
