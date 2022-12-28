@@ -96,7 +96,6 @@ Configure the common `scripts` to run with Turborepo:
     "lint": "npm run lint:code && npm run lint:styles",
     "lint:code": "TIMING=1 eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:styles": "TIMING=1 stylelint 'src/**/*.{html,css,js,jsx,ts,tsx}'",
-    "lint:staged": "lint-staged -q",
     "test": "jest"
   }
 }
