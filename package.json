@@ -22,10 +22,13 @@
     "git:prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cz-commitlint": "^17.3.0",
     "commitizen": "^4.2.6",
     "cross-env": "^7.0.3",
-    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.2",
+    "inquirer": "^8.2.5",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "rimraf": "^3.0.2",
@@ -33,7 +36,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "@commitlint/cz-commitlint"
     }
   }
 }
