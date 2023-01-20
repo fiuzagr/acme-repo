@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "composite": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "extends": "@acme/tsconfig/base.json",
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../shared-kernel"
+    }
+  ]
+}

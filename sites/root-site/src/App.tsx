@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { CounterButton } from '@acme/ui';
 
-const HomeApp = React.lazy(() => import('@acme/home-site/App'));
+const HomeApp = React.lazy(() => import('@acme/home-site/app'));
 
 function App() {
   return (

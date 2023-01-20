@@ -5,7 +5,7 @@
       "build": "craco build",
       "test": "craco test",
       "eject": "echo 'Eject is disabled'",
-      "clean": "rimraf .turbo node_modules dist build",
+      "clean": "rimraf .turbo node_modules dist build *.tsbuildinfo",
       "dev": "npm start",
       "lint": "npm run lint:code && npm run lint:styles",
       "lint:code": "TIMING=1 eslint 'src/**/*.{js,jsx,ts,tsx}'",

@@ -4,14 +4,15 @@ const deps = require('./package.json').dependencies;
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
-      webpackConfig.output.publicPath = 'auto';
+      // FIXME fix publicPath to work with Module Federation and SPA routes
+      // webpackConfig.output.publicPath = 'auto';
 
       webpackConfig.plugins.push(
         new ModuleFederationPlugin({
           name: 'acme_home_site',
-          filename: 'remoteEntry.js',
+          filename: 'remote-entry.js',
           exposes: {
-            './App': './src/App',
+            './app': './src/app',
           },
           shared: {
             ...deps,
@@ -19,6 +20,10 @@ module.exports = {
             'react-dom': {
               singleton: true,
               requiredVersion: deps['react-dom'],
+            },
+            'react-router-dom': {
+              singleton: true,
+              requiredVersion: deps['react-router-dom'],
             },
           },
         })

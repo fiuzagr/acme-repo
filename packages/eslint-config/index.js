@@ -25,6 +25,9 @@ module.exports = {
     {
       // config files can be use CommonJS module
       files: ['./*.js'],
+      env: {
+        node: true,
+      },
       rules: {
         '@typescript-eslint/no-var-requires': OFF,
       },
