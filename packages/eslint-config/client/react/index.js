@@ -1,8 +1,8 @@
 module.exports = {
-  extends: ['../index.js', 'react-app', 'react-app/jest'],
+  extends: ["../index.js"],
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
 };

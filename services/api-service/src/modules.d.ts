@@ -1,1 +1,1 @@
-declare module '@acme/logger';
+declare module "@acme/logger";

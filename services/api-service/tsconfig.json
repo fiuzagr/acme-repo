@@ -6,7 +6,8 @@
     "module": "commonjs",
     "outDir": "dist",
     "rootDir": "src",
-    "composite": true
+    "composite": true,
+    "esModuleInterop": true
   },
   "extends": "@acme/tsconfig/base.json",
   "include": [

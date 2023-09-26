@@ -1,1 +1,1 @@
-module.exports = require('@acme/lint-staged-config');
+module.exports = require("@acme/lint-staged-config/with-tsup");

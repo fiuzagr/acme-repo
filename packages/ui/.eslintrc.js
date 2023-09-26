@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@acme/eslint-config/client/react/library'],
+  extends: ["@acme/eslint-config/client/react/library"],
 };

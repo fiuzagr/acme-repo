@@ -13,15 +13,17 @@ A monorepo starter kit for Typescript code.
   linting
 - [Prettier](https://prettier.io) for code formatting
 - [Jest](https://jestjs.io) a test framework
-- a sample of the
-  [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
-  implementation over [CRA](https://create-react-app.dev/) with
-  [CRACO](https://craco.js.org/)
+- a sample of the [Next.js](https://nextjs.org/) implementation
 - [Commitizen](https://commitizen-tools.github.io/commitizen/) +
   [Commitlint](https://commitlint.js.org)
   working together with Git Hooks via
   [Husky](https://typicode.github.io/husky/)
 - [lint-staged](https://github.com/okonet/lint-staged) with Git Hooks via Husky
+
+
+- [ ] TODO: add a sample of the
+  [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
+  implementation over [Next.js](https://nextjs.org/)
 
 ## Creating a new package
 
@@ -41,23 +43,7 @@ configuration presets, helpers packages, utils packages, dev packages, etc.
 npm init --yes --scope='@acme' --workspace='<packages | services>/<package-dirname>'
 ```
 
-- [ ] TODO: make a npm init template
-
-### CRA Site (with [CRACO](https://craco.js.org/))
-
-```shell
-npx create-react-app sites/<site-dirname> --template=@acme/cra-template
-npm pkg set name="@acme/<site-dirname>" --workspace="<site-dirname>"
-```
-
-> :information_source: The new package name will be used in
-> `--workspace=<package-name>` for the next commands.
-
-To define a new application PORT (`localhost:<PORT>`):
-
-```shell
-npm pkg set scripts.start='cross-env PORT=<localhost-port> craco start' --workspace="<package-name>"
-```
+- [ ] TODO: make a npm init template of package and service
 
 ## Configuring a new package
 
@@ -95,7 +81,7 @@ Configure the common `scripts` to run with Turborepo:
     "dev": "...",
     "lint": "npm run lint:code && npm run lint:styles",
     "lint:code": "TIMING=1 eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:styles": "TIMING=1 stylelint 'src/**/*.{html,css,js,jsx,ts,tsx}'",
+    "lint:styles": "TIMING=1 stylelint 'src/**/*.{html,css,scss}'",
     "test": "jest"
   }
 }

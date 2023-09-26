@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const CounterButton = () => {
   const [count, setCount] = React.useState(1);
@@ -6,20 +6,20 @@ export const CounterButton = () => {
   return (
     <div
       style={{
-        background: 'rgb(0 100 0 / 10%)',
-        borderRadius: '6px',
-        padding: '1.5rem',
+        background: "rgb(0 100 0 / 10%)",
+        borderRadius: "6px",
+        padding: "1.5rem",
         fontWeight: 500,
       }}
     >
-      <p style={{ marginBlockEnd: '1.5rem', marginInline: 0 }}>
-        This component is from{' '}
+      <p style={{ marginBlockEnd: "1.5rem", marginInline: 0 }}>
+        This component is from{" "}
         <code
           style={{
-            paddingBlock: '0.2rem',
-            paddingInline: '0.3rem',
-            background: 'rgba(0 0 0 / 10%)',
-            borderRadius: '0.25rem',
+            paddingBlock: "0.2rem",
+            paddingInline: "0.3rem",
+            background: "rgba(0 0 0 / 10%)",
+            borderRadius: "0.25rem",
           }}
         >
           ui
@@ -28,14 +28,14 @@ export const CounterButton = () => {
       <div>
         <button
           style={{
-            background: 'black',
-            color: 'white',
-            border: 'none',
-            paddingBlock: '0.5rem',
-            paddingInline: '1rem',
-            borderRadius: '0.25rem',
-            display: 'inline-block',
-            cursor: 'pointer',
+            background: "black",
+            color: "white",
+            border: "none",
+            paddingBlock: "0.5rem",
+            paddingInline: "1rem",
+            borderRadius: "0.25rem",
+            display: "inline-block",
+            cursor: "pointer",
           }}
           type="button"
           onClick={() => setCount((c) => c + 1)}

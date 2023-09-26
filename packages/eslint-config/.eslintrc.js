@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['./server/index.js'],
+  extends: ["./server/index.js"],
 };

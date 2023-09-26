@@ -1,1 +1,0 @@
-# @acme/cra-template
